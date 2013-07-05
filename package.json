@@ -1,0 +1,28 @@
+{
+  "name": "yslowjs",
+  "version": "0.0.1",
+  "description": "Wrapper for phantomjs yslow.js",
+  "main": "./lib/yslow.js",
+  "scripts": {
+    "test": "make tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmervine/yslowjs.git"
+  },
+  "keywords": [
+    "yslow",
+    "phantomjs",
+    "yslow.js",
+    "performance"
+  ],
+  "author": "Joshua Mervine <joshua@mervine.net> (http://mervine.net)",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/jmervine/yslowjs/issues"
+  },
+  "dependencies": {
+    "nodeunit": "~0.8.1",
+    "exec-sync": "~0.1.6"
+  }
+}
