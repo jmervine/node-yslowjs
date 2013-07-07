@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "exec-sync": "~0.1.6"
-  }
+  },
   "devDependencies": {
     "nodeunit": "~0.8.1"
   }
