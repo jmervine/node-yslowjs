@@ -21,25 +21,13 @@ module.exports = {
         test.ok(yslow.options.info);
         test.equal("basic", yslow.options.info);
 
-        test.throws( function () { new YSlow() }, Error);
-
-        test.done();
-    },
-
-    '#update_yslowdir': function (test) {
-        var yslow = new YSlow({
-                       url: "http://localhost/foobar",
-                       info: "basic",
-                       yslowdir: "./test/support" });
-
-        test.ok(yslow.yslowdir);
-        test.equal("./test/support", yslow.yslowdir);
         test.ok(process.env.PATH.indexOf("./test/support") !== -1);
 
-        yslow.update_yslowdir("/foo/bar/bah");
-        test.ok(yslow.yslowdir);
-        test.equal("/foo/bar/bah", yslow.yslowdir);
-        test.ok(process.env.PATH.indexOf("/foo/bar/bah") !== -1);
+        var y = new YSlow();
+        test.ok(y.url);
+        test.equal("http://localhost", y.url);
+
+        test.ok(y.yslowdir);
 
         test.done();
     },
