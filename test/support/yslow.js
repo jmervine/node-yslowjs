@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-echo "{ \"foo\": \"bar\" }";
+echo "placehold for phapper fs.existsSync";
+
+# vim: ft=sh:

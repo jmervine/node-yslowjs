@@ -22,7 +22,8 @@
     "url": "https://github.com/jmervine/yslowjs/issues"
   },
   "dependencies": {
-    "exec-sync": "~0.1.6"
+    "exec-sync": "~0.1.6",
+    "phapper": "0.0.1"
   },
   "devDependencies": {
     "nodeunit": "~0.8.1"

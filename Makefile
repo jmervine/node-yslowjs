@@ -7,6 +7,9 @@ console:
 tests:
 	$(NODE_EXEC)nodeunit ./test/*_test.js
 
+functional:
+	$(NODE_LIBS) node ./test/functional.js
+
 setup:
 	npm install
 
