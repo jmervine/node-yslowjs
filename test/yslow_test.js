@@ -1,16 +1,31 @@
-var YSlow      = require('lib/yslow');
+var YSlow = require('lib/yslow');
 
 // BEGIN stubs
-var sample_results = {
-    o: 75
+var sample_runSync = {
+    parsed: {
+        o: 75
+    },
+    stderr: null,
+    stdout: "{ 'o': 75 }"
+};
+
+var sample_run = {
+    parsed: {
+        o: 75
+    },
+    raw: {
+        error: null,
+        stdout: "{ 'o': 75 }",
+        stderr: null
+    }
 };
 
 var stub_runSync = function () {
-    return sample_results;
+    return sample_runSync;
 };
 
 var stub_run = function (callback) {
-    callback(sample_results);
+    callback(sample_run.parsed, sample_run.raw);
 };
 
 // END stubs
@@ -18,11 +33,7 @@ var yslow;
 
 module.exports = {
     setUp: function (callback) {
-        yslow = new YSlow({
-           url: "http://localhost/foobar",
-           info: "basic",
-           yslow: "./test/support/yslow.js" });
-
+        yslow = new YSlow('http://localhost/foobar');
         yslow.phantom.run = stub_run;
         yslow.phantom.runSync = stub_runSync;
         callback();
@@ -34,16 +45,18 @@ module.exports = {
     },
 
     'new YSlow(opts)': function (test) {
-        test.expect(6);
+        test.expect(7);
 
         test.ok(yslow);
         test.ok(yslow.phantom);
-        test.ok(yslow.phantom.script.indexOf("yslow.js"));
-        test.ok(yslow.phantom.args.indexOf('--info') !== -1);
-        test.ok(yslow.phantom.args.indexOf('basic') !== -1);
+        test.ok(yslow.phantom.script.indexOf('yslow_phantom.js'));
+
+        test.ok(yslow.phantom.args.indexOf('--format') !== -1);
+        test.ok(yslow.phantom.args.indexOf('json') !== -1);
 
         yslow = new YSlow();
-        test.ok(yslow.phantom.script.indexOf("yslow.js"));
+        test.equal('http://localhost', yslow.url);
+        test.ok(yslow.phantom.script.indexOf('yslow_phantom.js'));
 
         test.done();
     },
@@ -69,14 +82,24 @@ module.exports = {
         test.done();
     },
 
-    'Phapper#command': function (test) {
-        var yslow = new YSlow();
+    'Phapper#commandString': function (test) {
+        test.expect(4);
 
-        test.ok(yslow.phantom.command());
-        test.equal(
-            "phantomjs ./lib/phantomjs/yslow.js http://localhost",
-            yslow.phantom.command()
-        );
+        var yslow = new YSlow();
+        var cmdStr = yslow.phantom.commandString();
+
+        test.ok(cmdStr, 'expecting command string');
+
+        var value;
+
+        value = (cmdStr.indexOf('phantomjs ') !== -1);
+        test.ok(value, 'expecting "phantomjs" in command string');
+
+        value = (cmdStr.indexOf('yslow_phantom.js') !== -1);
+        test.ok(value, 'expecting "yslow_phantom.js" in command string');
+
+        value = (cmdStr.indexOf('http://localhost') !== -1);
+        test.ok(value, 'expecting "http://localhost" in command string');
 
         test.done();
     },

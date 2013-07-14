@@ -4,7 +4,7 @@
   "description": "Wrapper for phantomjs yslow.js",
   "main": "./lib/yslow.js",
   "scripts": {
-    "test": "make tests"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "exec-sync": "~0.1.6",
-    "phapper": "0.0.1"
+    "phapper": "*"
   },
   "devDependencies": {
     "nodeunit": "~0.8.1"
