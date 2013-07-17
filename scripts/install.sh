@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
-libdir="$(echo $(cd $(dirname $0); pwd)/lib)"
-#http://yslow.org/yslow-phantomjs-3.1.5.zip
+libdir="$(echo $(cd $(dirname $0)/..; pwd)/lib)"
 srcpath="http://yslow.org"
 version="3.1.5"
+
+if test "$npm_config_yslowjs_version"; then
+  version="$npm_config_yslowjs_version"
+else
+  version="$npm_package_config_yslowjs_version"
+fi
+
 yspkg="yslow-phantomjs-$version.zip"
 
 decomp="unzip -q -o"
@@ -61,17 +67,20 @@ else
 fi
 
 # decompress package
+echo " "
 echo "Decompressing $yspkg"
 $decomp $yspkg
 if [ $? -ne 0 ]; then
   echo "Error occured decompressing $yspkg"
   exit 1
 fi
-mv yslow.js $libdir/yslow_phantom.js
+
+cp $(pwd)/yslow.js $libdir/yslow_phantom.js
 if [ $? -ne 0 ]; then
   echo "Error moving yslow.js in to place."
   exit 1
 fi
+echo " "
 
 write_yspath_js "$libdir/yslow_phantom.js"
 yay_finished

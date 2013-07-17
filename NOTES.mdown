@@ -1,0 +1,20 @@
+YSlow.js is installed in the code base by default, however,
+on installation an install script is run to ensure that the
+pathing is setup correctly. This install script does not support
+Windows.
+
+Pathing to `yslow.js` is in the Mac / Linux format. As a
+workaround you should be able to simply add the following
+when initializing `YSlow`.
+
+YSlow.js isntallation isn't supported on Windows. See
+http://yslow.org/phantomjs for Windows installation
+instructions.
+
+   var YSlow = require('yslowjs');
+   YSlow.prototype.script = '/path/to/yslow.js';
+
+If this doesn't work, the failover is to isntall `yslow.js`
+(http://yslow.org/phantomjs) and specify the path as shown
+above.
+

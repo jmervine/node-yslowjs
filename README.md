@@ -20,6 +20,23 @@ YSlow.js on [Node.js](http://mervine.net/nodejs) is a simple [Node.js](http://me
     :::shell
     $ npm install yslowjs
 
+#### Additional Installation Notes
+
+You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) using `npm config`:
+
+    $ npm config set yslowjs_version
+
+> You will have to reinstall `yslowjs` if you change this option after initially installing it.
+
+I've added limited Windows support, in that things should work by default, YSlow.js should be there and ready to use. If it doesn't, you'll have to install [`yslow.js`](http://yslow.org/phantomjs) yourself and specify the path like so:
+
+    :::js
+    var YSlow = require('yslowjs');
+    YSlow.prototype.script = 'c:\path\to\yslow.js';
+
+> It's important to note that I haven't tested this on Windows (and don't really have an easy way to), so feedback and/or pull requests are welcome.
+
+
 ## Configuration Options
 
     :::js
