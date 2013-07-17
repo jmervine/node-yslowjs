@@ -28,7 +28,7 @@ You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) usi
 
 > You will have to reinstall `yslowjs` if you change this option after initially installing it.
 
-> #### [Windows? Click here!](https://github.com/jmervine/node-yslowjs/blob/master/NOTES.mdown)
+#### [Windows? Click here!](https://github.com/jmervine/node-yslowjs/blob/master/NOTES.mdown)
 
 ## Configuration Options
 
