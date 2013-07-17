@@ -11,8 +11,9 @@ YSlow.js isntallation isn't supported on Windows. See
 http://yslow.org/phantomjs for Windows installation
 instructions.
 
-   var YSlow = require('yslowjs');
-   YSlow.prototype.script = '/path/to/yslow.js';
+
+    var YSlow = require('yslowjs');
+    YSlow.prototype.script = '/path/to/yslow.js';
 
 If this doesn't work, the failover is to isntall `yslow.js`
 (http://yslow.org/phantomjs) and specify the path as shown
