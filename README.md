@@ -28,14 +28,7 @@ You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) usi
 
 > You will have to reinstall `yslowjs` if you change this option after initially installing it.
 
-I've added limited Windows support, in that things should work by default, YSlow.js should be there and ready to use. If it doesn't, you'll have to install [`yslow.js`](http://yslow.org/phantomjs) yourself and specify the path like so:
-
-    :::js
-    var YSlow = require('yslowjs');
-    YSlow.prototype.script = 'c:\path\to\yslow.js';
-
-> It's important to note that I haven't tested this on Windows (and don't really have an easy way to), so feedback and/or pull requests are welcome.
-
+> #### [Windows? Click here!](https://github.com/jmervine/node-yslowjs/blob/master/NOTES.mdown)
 
 ## Configuration Options
 
