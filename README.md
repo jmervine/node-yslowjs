@@ -22,6 +22,8 @@ YSlow.js on [Node.js](http://mervine.net/nodejs) is a simple [Node.js](http://me
     :::shell
     $ npm install yslowjs
 
+> See [Phapper](http://mervine.net/projects/npms/phapper) if you're having issues with PhantomJS.
+
 #### Additional Installation Notes
 
 You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) using `npm config`:
