@@ -1,6 +1,6 @@
 {
   "name": "yslowjs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Wrapper for phantomjs yslow.js",
   "main": "./lib/yslow.js",
   "scripts": {
@@ -26,7 +26,6 @@
     "url": "https://github.com/jmervine/yslowjs/issues"
   },
   "dependencies": {
-    "exec-sync": "~0.1.6",
     "phapper": "*"
   },
   "devDependencies": {
