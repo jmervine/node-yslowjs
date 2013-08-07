@@ -1,5 +1,7 @@
 # YSlow.js on Node.js
 
+[![Build Status](https://travis-ci.org/jmervine/node-yslowjs.png?branch=master)](https://travis-ci.org/jmervine/node-yslowjs) &nbsp; [![Dependancy Status](https://david-dm.org/jmervine/node-yslowjs.png)](https://david-dm.org/jmervine/node-yslowjs) &nbsp; [![NPM Version](https://badge.fury.io/js/yslowjs.png)](https://badge.fury.io/js/yslowjs)
+
 YSlow.js on [Node.js](http://mervine.net/nodejs) is a simple [Node.js](http://mervine.net/nodejs) wrapper for programmatically running [`phantomjs yslow.js`](http://yslow.org/phantomjs/).
 
 ## Links
@@ -11,7 +13,7 @@ YSlow.js on [Node.js](http://mervine.net/nodejs) is a simple [Node.js](http://me
 ## Requirements
 
 1. [PhantomJS](http://phantomjs.org/) in your `PATH`.
-2. [![Build Status](https://travis-ci.org/jmervine/node-yslowjs.png?branch=master)](https://travis-ci.org/jmervine/node-yslowjs) for the following node versions:
+2. Tested on the following node versions (via [Travis-ci.org](http://travis-ci.org)):
     - 0.8
     - 0.10
 
@@ -19,6 +21,8 @@ YSlow.js on [Node.js](http://mervine.net/nodejs) is a simple [Node.js](http://me
 
     :::shell
     $ npm install yslowjs
+
+> See [Phapper](http://mervine.net/projects/npms/phapper) if you're having issues with PhantomJS.
 
 #### Additional Installation Notes
 
