@@ -20,7 +20,7 @@ module.exports = {
 
         console.log('\nRunning (Async)....');
 
-        yslow.run( function (result) {
+        yslow.run( function (error, result) {
             console.log('=> overall:   ' + result.o);
             test.ok(result.o, 'run: result.o');
 

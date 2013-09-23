@@ -58,9 +58,13 @@ You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) usi
     var yslow = new YSlow('http://mervine.net/projects/npms/yslowjs',
         [ '--info', 'basic' ]);
     console.log('\nRunning (Async)....');
-    yslow.run( function (result) {
-        console.log('=> overall:   ' + result.o);
-        console.log('=> load time: ' + result.lt);
+    yslow.run( function (error, result) {
+        if (error) {
+            console.trace(error);
+        } else {
+            console.log('=> overall:   ' + result.o);
+            console.log('=> load time: ' + result.lt);
+        }
     });
 
 #### Sync

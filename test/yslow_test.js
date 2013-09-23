@@ -2,21 +2,31 @@ var YSlow = require('lib/yslow');
 
 // BEGIN stubs
 var sample_runSync = {
-    parsed: {
-        o: 75
-    },
+    parsed: { o: 75 },
     stderr: null,
     stdout: "{ 'o': 75 }"
 };
 
 var sample_run = {
-    parsed: {
-        o: 75
-    },
+    parsed: { o: 75 },
     raw: {
         error: null,
         stdout: "{ 'o': 75 }",
         stderr: null
+    }
+};
+
+var sample_error_run1 = {
+    raw: {
+        error: new Error('ack error1'),
+        stderr: null
+    }
+};
+
+var sample_error_run2 = {
+    raw: {
+        error: null,
+        stderr: 'ack error2'
     }
 };
 
@@ -26,6 +36,18 @@ var stub_runSync = function () {
 
 var stub_run = function (callback) {
     callback(sample_run.parsed, sample_run.raw);
+};
+
+var stub_error_run1 = function (callback) {
+    callback(null, sample_error_run1.raw);
+};
+
+var stub_error_run2 = function (callback) {
+    callback(null, sample_error_run2.raw);
+};
+
+var stub_error_run3 = function (callback) {
+    callback(undefined, {});
 };
 
 // END stubs
@@ -64,9 +86,39 @@ module.exports = {
     '#run': function (test) {
         test.expect(2);
 
-        yslow.run( function (result) {
+        yslow.run( function (error, result) {
             test.ok(result);
             test.equal(75, result.o);
+            test.done();
+        });
+    },
+
+    '#run w/ errors (condition 1)': function (test) {
+        // error condition one
+        yslow.phantom.run = stub_error_run1;
+        yslow.run( function (error, result) {
+            test.ok(error);
+            test.equal('ack error1', error.message);
+            test.done();
+        });
+    },
+
+    '#run w/ errors (condition 2)': function (test) {
+        // error condition two
+        yslow.phantom.run = stub_error_run2;
+        yslow.run( function (error, result) {
+            test.ok(error);
+            test.equal('ack error2', error.message);
+            test.done();
+        });
+    },
+
+    '#run w/ errors (condition 3)': function (test) {
+        // error condition two
+        yslow.phantom.run = stub_error_run3;
+        yslow.run( function (error, result) {
+            test.ok(error);
+            test.equal('Error parsing results.', error.message);
             test.done();
         });
     },
