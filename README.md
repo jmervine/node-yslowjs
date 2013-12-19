@@ -38,7 +38,7 @@ You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) usi
 
     :::js
     var yslow = new YSlow('http://example.com/path/foo',
-        [ '--arg', 'value' ]);
+        [ '--arg value' ]);
         // Supported:
         //   info     specify the information to display/log (basic|grade|stats|comps|all) [all],
         //   ruleset  specify the YSlow performance ruleset to be used (ydefault|yslow1|yblog) [ydefault],
