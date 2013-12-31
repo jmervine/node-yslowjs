@@ -1,6 +1,7 @@
-# YSlow.js on Node.js
+# YSlow.js on Node.js <iframe src="http://jmervine.github.io/npm-downloads-badge/badge.html?module=yslowjs&name=false" allowtransparency="true" frameborder="0" scrolling="0" width="125" height="20"></iframe>
 
-[![Build Status](https://travis-ci.org/jmervine/node-yslowjs.png?branch=master)](https://travis-ci.org/jmervine/node-yslowjs) &nbsp; [![Dependancy Status](https://david-dm.org/jmervine/node-yslowjs.png)](https://david-dm.org/jmervine/node-yslowjs) &nbsp; [![NPM Version](https://badge.fury.io/js/yslowjs.png)](https://badge.fury.io/js/yslowjs) &nbsp; <iframe src="http://jmervine.github.io/npm-downloads-badge/badge.html?module=yslowjs&name=false" allowtransparency="true" frameborder="0" scrolling="0" width="125" height="20"></iframe>
+
+[![Build Status](https://travis-ci.org/jmervine/node-yslowjs.png?branch=master)](https://travis-ci.org/jmervine/node-yslowjs) &nbsp; [![Dependancy Status](https://david-dm.org/jmervine/node-yslowjs.png)](https://david-dm.org/jmervine/node-yslowjs) &nbsp; [![NPM Version](https://badge.fury.io/js/yslowjs.png)](https://badge.fury.io/js/yslowjs)
 
 
 YSlow.js on [Node.js](http://mervine.net/nodejs) is a simple [Node.js](http://mervine.net/nodejs) wrapper for programmatically running [`phantomjs yslow.js`](http://yslow.org/phantomjs/).
