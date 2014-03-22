@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 libdir="$(echo $(cd $(dirname $0)/..; pwd)/lib)"
 srcpath="http://yslow.org"
-version="3.1.5"
+version="3.1.8"
 
 if test "$npm_config_yslowjs_version"; then
   version="$npm_config_yslowjs_version"
