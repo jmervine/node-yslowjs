@@ -3,6 +3,7 @@
   "version": "0.3.2",
   "description": "Wrapper for phantomjs yslow.js",
   "main": "./lib/yslow.js",
+  "license" : "MIT",
   "scripts": {
     "test": "make test",
     "install": "node install.js"
