@@ -39,7 +39,7 @@ You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) usi
 
     :::js
     var yslow = new YSlow('http://example.com/path/foo',
-        [ '--arg', 'value' ]);
+        [ '--arg value' ]);
         // Supported:
         //   info     specify the information to display/log (basic|grade|stats|comps|all) [all],
         //   ruleset  specify the YSlow performance ruleset to be used (ydefault|yslow1|yblog) [ydefault],
@@ -57,7 +57,7 @@ You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) usi
     // file: async.js
     var YSlow = require('lib/yslow');
     var yslow = new YSlow('http://mervine.net/projects/npms/yslowjs',
-        [ '--info', 'basic' ]);
+        [ '--info basic' ]);
     console.log('\nRunning (Async)....');
     yslow.run( function (error, result) {
         if (error) {
@@ -74,7 +74,7 @@ You can specify different versions of [YSlow.js](http://mervine.net/yslowjs) usi
     // file: sync.js
     var YSlow = require('lib/yslow');
     var yslow = new YSlow('http://mervine.net/projects/npms/yslowjs',
-        [ '--info', 'basic' ]);
+        [ '--info basic' ]);
     console.log('\nRunning (Sync)....');
     var results = yslow.runSync();
     console.log('=> overall:   ' + results.o);
